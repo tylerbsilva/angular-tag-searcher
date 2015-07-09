@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tagSearcher">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular Tag Searcher!</title>
+  <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.deep_orange-green.min.css" />
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <script src="js/app.js"></script>
+
+</head>
+<body class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="mainCtrl">
+  <header class="mdl-layout__header">
+    <h1>Instagram Tag Searcher!</h1>
+    <h3>Using Angular!</h3>
+    <form name="getInstaTag" ng-submit="getTag()">
+      <div class="mdl-textfield mdl-js-textfield textfield-demo">
+        <input class="mdl-textfield__input" type="text" id="userInput" name="userInput" ng-model="userInput" required/>
+        <label class="mdl-textfield__label" for="userInput">What's the tag?</label>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit">GO!</button>
+    </form>
+  </header>
+  <section class="output">
+    <div ng-repeat="result in results">
+      <div class="mdl-card demo-card-image" style="background: url('{{result.filename}}') center / cover;">
+        <div class="mdl-card__title mdl-card--expand"></div>
+        <div class="mdl-card__actions">
+          <span class="demo-card-image__filename">@{{result.user}}</span>
+        </div> <!-- - mdl-card__actions - -->
+      </div> <!-- - mdl-card - -->
+    </div> <!-- - ng repeat -  -->
+  </section> <!-- - output - -->
+  <footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer--left-section">
+      <div class="mdl-logo">Angular Tag Searcher</div>
+      <ul class="mdl-mini-footer--link-list">
+        <li>Made by: <a href="http://www.tylerbsilva.com" target="_blank">Tyler Silva</a></li>
+        <li></li>
+      </ul>
+    </div> <!-- - mdl-mini-footer left-section - -->
+    <div class="mdl-mini-footer--right-section">
+      <button class="mdl-mini-footer--social-btn"></button>
+      <button class="mdl-mini-footer--social-btn"></button>
+      <button class="mdl-mini-footer--social-btn"></button>
+    </div> <!-- - mdl footer right section - -->
+  </footer>
+</body>
+</html>
