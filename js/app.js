@@ -24,10 +24,23 @@ app.controller('mainCtrl', ['$scope', '$http', function($scope, $http){
     //     count: 20
     //   }
     // };
+    $scope.results = [];
     // Make Call
-    $http.jsonp(url)
+    // Query made to Instagram API
+    var url = 'https://api.instagram.com/v1/tags/' + $scope.userInput + '/media/recent';
+    var request = {
+      callback: 'JSON_CALLBACK',
+      client_id: '5503095ad923454ea88d7e833aecbde9',
+    };
+
+    $http({
+      method: 'JSONP',
+      url: url,
+      params: request
+    })
     .success(function(data){
-      console.log(data);
+      $scope.results = data.data;
+      console.log($scope.results);
     });
     // Clear out input
     $scope.userInput = "";
