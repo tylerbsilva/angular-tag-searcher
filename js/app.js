@@ -16,7 +16,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
       // ON succes, log the data
 
       $scope.results = result.data;
-      console.log($scope.results);
     }).error(function(data, status){
       // on fail, log the status code
       alert('STATUS CODE: ' + status);
