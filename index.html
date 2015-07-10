@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="css/main.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   <script src="js/app.js"></script>
 
 </head>
@@ -24,11 +25,11 @@
         <input class="mdl-textfield__input" type="text" name="userInput" ng-model="data.userInputModel" required/>
         <label class="mdl-textfield__label" for="userInput">What's the tag?</label>
       </div>
-      <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit" />
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit" />SEARCH!</button>
     </form>
   </header>
   <section class="output">
-    <div ng-repeat="insta in results">
+    <div ng-repeat="insta in results" ng-cloak>
       <div class="mdl-card demo-card-image" style="background: url('{{insta.images.standard_resolution.url}}') center / cover;">
         <div class="mdl-card__title mdl-card--expand"></div>
         <div class="mdl-card__actions">
