@@ -1,9 +1,9 @@
 var app = angular.module('tagSearcher', []);
 
-app.config(function($httpProvider) {
-  $httpProvider.defaults.useXDomain = true;
-  delete $httpProvider.defaults.headers.common['X-Requested-With'];
-});
+// app.config(function($httpProvider) {
+//   $httpProvider.defaults.useXDomain = true;
+//   delete $httpProvider.defaults.headers.common['X-Requested-With'];
+// });
 
 app.controller('MainController', ['$scope', '$http', function($scope, $http){
   // var removeHashtag = function(searchTerm){
