@@ -18,9 +18,9 @@
   <header class="mdl-layout__header">
     <h1>Instagram Tag Searcher!</h1>
     <h3>Using Angular!</h3>
-    <form name="getInstaTag" ng-submit="getTag(userInput)">
+    <form name="getInstaTag" ng-submit="submit(userInputModel)">
       <div class="mdl-textfield mdl-js-textfield textfield-demo">
-        <input class="mdl-textfield__input" type="text" id="userInput" name="userInput" ng-model="userInput" required/>
+        <input class="mdl-textfield__input" type="text" id="userInput" name="userInput" ng-model="userInputModel" required/>
         <label class="mdl-textfield__label" for="userInput">What's the tag?</label>
       </div>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit">GO!</button>
