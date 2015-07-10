@@ -22,9 +22,9 @@
     <h1>Instagram Tag Searcher!</h1>
     <h3>Using Angular!</h3>
 
-    <form name="getInstaTag" ng-submit="submit(userInputModel)">
+    <form name="getInstaTag" ng-submit="submit(data.userInputModel)">
       <div class="mdl-textfield mdl-js-textfield textfield-demo">
-        <input class="mdl-textfield__input" type="text" id="userInput" name="userInput" ng-model="userInputModel" required/>
+        <input class="mdl-textfield__input" type="text" name="userInput" ng-model="data.userInputModel" required/>
         <label class="mdl-textfield__label" for="userInput">What's the tag?</label>
       </div>
       <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit" />
@@ -32,14 +32,14 @@
   </header>
 
   <section class="output">
-    <div ng-repeat="result in results">
+    <!-- <div ng-repeat="result in results">
       <div class="mdl-card demo-card-image" style="background-color: #EEFF99 center / cover;">
-        <div class="mdl-card__title mdl-card--expand"></div>
+        <div class="mdl-card__title mdl-card- -expand"></div>
         <div class="mdl-card__actions">
           <span class="demo-card-image__filename">@</span>
-        </div> <!-- - mdl-card__actions - -->
-      </div> <!-- - mdl-card - -->
-    </div> <!-- - ng repeat -  -->
+        </div> - mdl-card__actions -
+      </div> - mdl-card -
+    </div> - ng repeat - -->
   </section> <!-- - output - -->
 
   <footer class="mdl-mini-footer">
