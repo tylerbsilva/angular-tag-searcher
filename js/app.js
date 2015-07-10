@@ -19,10 +19,10 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
 
 
 
-  $scope.getTag = function() {
-    console.log("User said: " + $scope.userInput);
+  $scope.getTag = function(userInput) {
+    console.log("User said: " + userInput);
     // Set URL of call
-    var url = 'https://api.instagram.com/v1/tags/' + $scope.userInput + '/media/recent?';
+    var url = 'https://api.instagram.com/v1/tags/' + userInput + '/media/recent?';
     // Set request paramaters
     var request = {
       client_id: '5503095ad923454ea88d7e833aecbde9',
