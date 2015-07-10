@@ -1,9 +1,11 @@
+<!-- FIRST TIME TRYING GOOGLE MATERIAL DESIGN -->
 <!DOCTYPE html>
-<html lang="en" ng-app="tagSearcher">
+<html lang="en" ng-app="tagSearcher"  ng-controller="MainController">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angular Tag Searcher!</title>
+  <!-- STYLES -->
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.deep_orange-green.min.css" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -14,28 +16,32 @@
   <script src="js/app.js"></script>
 
 </head>
-<body class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="MainController">
+<body class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
   <header class="mdl-layout__header">
     <h1>Instagram Tag Searcher!</h1>
     <h3>Using Angular!</h3>
+
     <form name="getInstaTag" ng-submit="submit(userInputModel)">
       <div class="mdl-textfield mdl-js-textfield textfield-demo">
         <input class="mdl-textfield__input" type="text" id="userInput" name="userInput" ng-model="userInputModel" required/>
         <label class="mdl-textfield__label" for="userInput">What's the tag?</label>
       </div>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit">GO!</button>
+      <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" type="submit" />
     </form>
   </header>
+
   <section class="output">
     <div ng-repeat="result in results">
-      <div class="mdl-card demo-card-image" style="background: url('{{result.filename}}') center / cover;">
+      <div class="mdl-card demo-card-image" style="background-color: #EEFF99 center / cover;">
         <div class="mdl-card__title mdl-card--expand"></div>
         <div class="mdl-card__actions">
-          <span class="demo-card-image__filename">@{{result.user}}</span>
+          <span class="demo-card-image__filename">@</span>
         </div> <!-- - mdl-card__actions - -->
       </div> <!-- - mdl-card - -->
     </div> <!-- - ng repeat -  -->
   </section> <!-- - output - -->
+
   <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer--left-section">
       <div class="mdl-logo">Angular Tag Searcher</div>
@@ -50,5 +56,6 @@
       <button class="mdl-mini-footer--social-btn"></button>
     </div> <!-- - mdl footer right section - -->
   </footer>
+
 </body>
 </html>
