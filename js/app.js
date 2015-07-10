@@ -23,7 +23,6 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
     console.log("User said: " + $scope.userInput);
     // Set URL of call
     var url = 'https://api.instagram.com/v1/tags/' + $scope.userInput + '/media/recent?';
-    console.log(url);
     // Set request paramaters
     var request = {
       callback: 'JSON_CALLBACK',
@@ -31,7 +30,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
     };
     // Make Call
     $http({
-      method: 'GET',
+      method: 'JSONP',
       url: url,
       params: request
     })
@@ -39,7 +38,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
       console.log(data);
     })
     .error(function(data, status){
-      console.log('╯°□°）╯︵ ┻━┻ ' + status);
+      console.log('(╯°□°）╯︵ ┻━┻ ' + status);
     });
     // Clear out input
     $scope.userInput = "";
