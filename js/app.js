@@ -30,6 +30,7 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
     };
     // Make Call
     $http({
+      method: 'GET',
       url: url,
       params: request
     })
