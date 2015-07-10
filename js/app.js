@@ -25,8 +25,8 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
     var url = 'https://api.instagram.com/v1/tags/' + $scope.userInput + '/media/recent?';
     // Set request paramaters
     var request = {
-      callback: 'JSON_CALLBACK',
       client_id: '5503095ad923454ea88d7e833aecbde9',
+      count: '10'
     };
     // Make Call
     $http({
