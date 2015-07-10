@@ -12,12 +12,14 @@ app.controller('MainController', ['$scope', '$http', function($scope, $http){
     // Set URL
     var url = 'https://api.instagram.com/v1/tags/'+tag+'/media/recent?client_id=5503095ad923454ea88d7e833aecbde9&callback=JSON_CALLBACK';
     // Make HTTP call
-    $http.jsonp(url).success(function(data){
+    $http.jsonp(url).success(function(result){
       // ON succes, log the data
-      console.log(data);
+
+      $scope.results = result.data;
+      console.log($scope.results);
     }).error(function(data, status){
       // on fail, log the status code
-      alert(status);
+      alert('STATUS CODE: ' + status);
     });
   };
 }]);
