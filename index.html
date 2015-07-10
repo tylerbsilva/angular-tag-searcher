@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angular Tag Searcher!</title>
   <!-- STYLES -->
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.deep_orange-green.min.css" />
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.purple-light_green.min.css" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="css/main.css">
@@ -19,7 +19,6 @@
 <body class="mdl-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <h1>Instagram Tag Searcher!</h1>
-    <h3>Using Angular!</h3>
     <form ng-submit="submit(data.userInputModel)" name="tagForm">
       <div class="mdl-textfield mdl-js-textfield textfield-demo">
         <input class="mdl-textfield__input" type="text" name="userInput" ng-model="data.userInputModel" required/>
@@ -31,26 +30,17 @@
   <section class="output">
     <div ng-repeat="insta in results">
       <div class="mdl-card demo-card-image" style="background: url('{{insta.images.standard_resolution.url}}') center / cover;">
-        <div class="mdl-card__title mdl-card- -expand"></div>
+        <div class="mdl-card__title mdl-card--expand"></div>
         <div class="mdl-card__actions">
-          <span class="demo-card-image__filename">@{{insta.user.username}}</span>
+          <span class="demo-card-image__filename">
+            <a href="{{insta.link}}" target="_blank">@{{insta.user.username}}</a>
+          </span>- <!-- - demo-card-image__filename - -->
         </div><!--  - mdl-card__actions - -->
       </div><!--  - mdl-card - -->
     </div><!--  - ng repeat - -->
   </section>
 
-  <footer class="mdl-mini-footer">
-    <div class="mdl-mini-footer--left-section">
-      <div class="mdl-logo">Angular Tag Searcher</div>
-      <ul class="mdl-mini-footer--link-list">
-        <li>Made by: <a href="http://www.tylerbsilva.com" target="_blank">Tyler Silva</a></li>
-      </ul>
-    </div> <!-- - mdl-mini-footer left-section - -->
-    <div class="mdl-mini-footer--right-section">
-      <button class="mdl-mini-footer--social-btn"></button>
-      <button class="mdl-mini-footer--social-btn"></button>
-      <button class="mdl-mini-footer--social-btn"></button>
-    </div> <!-- - mdl footer right section - -->
+  <footer>
   </footer>
 </body>
 </html>
