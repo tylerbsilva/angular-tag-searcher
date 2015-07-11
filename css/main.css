@@ -15,6 +15,10 @@ header {
   text-align: center;
 }
 
+h4 {
+  text-align: center;
+}
+
 .textfield-demo {
   width: 60%;
 }
@@ -33,7 +37,7 @@ header {
   margin: 1%;
   float: left;
 }
-.demo-card-image > .mdl-card__actions {
+.demo-card-image .mdl-card__actions {
   height: 52px;
   padding: 16px;
   background: rgba(0, 0, 0, 0.7);
@@ -41,6 +45,24 @@ header {
 }
 .demo-card-image__filename {
   color: #fff;
+}
+
+.staggerAnimate.ng-enter {
+  /* standard transition code */
+  transition: .5s linear all;
+  opacity:0;
+}
+.staggerAnimate.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  transition-delay: 0.15s;
+
+  /* in case the stagger doesn't work then the duration value
+   must be set to 0 to avoid an accidental CSS inheritance */
+  transition-duration: 0s;
+}
+.staggerAnimate.ng-enter.ng-enter-active {
+  /* standard transition styles */
+  opacity:1;
 }
 
 @media screen and (min-width: 600px){
