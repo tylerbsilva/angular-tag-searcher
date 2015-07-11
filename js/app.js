@@ -42,12 +42,24 @@ app.controller('MainController', ['$scope', '$http', "$q", function($scope, $htt
       $scope.searching = true;
       $scope.searchTag = "Searching for " + $scope.tag + " tag...";
       wait().then(function(){
-        $scope.searching = false;
-        $scope.results = result.data;
+        // Check if there are results
+        if (result.data.length === 0){
+          $scope.searchTag = "Sorry! I couldn't find any results for " + $scope.tag;
+          wait().then(function(){
+            $scope.searching = false;
+          })
+        } else {
+          $scope.results = result.data;
+          $scope.searching = false;
+        } 
       });
     }).error(function(data, status){
       // on fail, log the status code
-      alert('STATUS CODE: ' + status);
+      scope.searching = true;
+      $scope.searhTag = "I'm sorry, we're experiencing some trouble contacting Instagram!";
+      wait().then(function(){
+        $scope.searching = false;
+      })
     });
   };
 }]);
